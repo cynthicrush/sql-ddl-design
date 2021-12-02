@@ -14,7 +14,6 @@ CREATE TABLE planets
   orbital_period_in_years FLOAT NOT NULL,
   orbits_around_id INTEGER REFERENCES orbits_arounds,
   galaxy INTEGER REFERENCES galaxies,
-  moons TEXT[]
 );
 
 CREATE TABLE orbits_arounds (
@@ -26,6 +25,13 @@ CREATE TABLE galaxies (
   id SERIAL PRIMARY KEY,
   name TEXT NOT NULL,
 )
+
+CREATE TABLE moons (
+  id SERIAL PRIMARY KEY,
+  name TEXT NOT NULL,
+  planet_id INTEGER REFERENCES planets
+)
+
 
 INSERT INTO planets
   (name, orbital_period_in_years, orbits_around, galaxy, moons)

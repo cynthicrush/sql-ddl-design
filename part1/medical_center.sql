@@ -15,7 +15,6 @@ CREATE TABLE patients(
   name TEXT NOT NULL,
   sex TEXT NOT NULL,
   birth_date TEXT NOT NULL DATE,
-  disease_id INTEGER REFERENCES diseases
 )
 
 CREATE TABLE diseases(
@@ -27,6 +26,7 @@ CREATE TABLE visits(
   id SERIAL PRIMARY KEY,
   patient_id INTEGER REFERENCES patients,
   doctor_id INTEGER REFERENCES doctors,
+  disease_id INTEGER REFERENCES diseases,
   date TEXT NOT NULL DATE
 )
 

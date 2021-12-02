@@ -38,7 +38,6 @@ CREATE TABLE games(
   date DATE,
   team_id INTEGER REFERENCES teams,
   cteam_id INTEGER REFERENCES cteams,
-  goal_id INTEGER REFERENCES goals,
   season_id INTEGER REFERENCES seasons,
   referee_id INTEGER REFERENCES referees,
 )
